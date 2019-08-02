@@ -17,7 +17,8 @@ export const building = {
                 population: '{1.2x}',
                 stock: '{1.2x}'
             }
-        }
+        },
+        expansion:{}
     },
     orchard: {
         name: '果园',
@@ -43,6 +44,15 @@ export const building = {
                 fruit_farmer: '2x',
                 stock: {
                     food: "{1.2}"
+                }
+            }
+        },
+        expansion:{
+            x: {
+                building: {
+                    resources: {
+                        wood: '30x',
+                    }
                 }
             }
         }
@@ -73,6 +83,15 @@ export const building = {
                     mine: "{1.2}"
                 }
             }
+        },
+        expansion:{
+            x: {
+                building: {
+                    resources: {
+                        wood: '30x',
+                    }
+                }
+            }
         }
     },
     barracks: {
@@ -99,6 +118,15 @@ export const building = {
                 miner: '2x',
                 stock: {
                     mine: "{1.2}"
+                }
+            }
+        },
+        expansion:{
+            x: {
+                building: {
+                    resources: {
+                        wood: '30x',
+                    }
                 }
             }
         }
