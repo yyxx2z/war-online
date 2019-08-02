@@ -49,6 +49,8 @@ export const creature = {
             atk: 10,
             atk_range: 1,
             cover_people: 1,
+            atk_interval: 0,
+            speed: 1
         },
     },
     archer: {
@@ -62,8 +64,10 @@ export const creature = {
         attributes: {
             hp: 10,
             atk: 5,
-            atk_range: 3,
+            atk_range: 5,
             cover_people: 1,
+            atk_interval: 0,
+            speed: 1
         },
     },
     catapult: {
@@ -77,8 +81,10 @@ export const creature = {
         attributes: {
             hp: 10,
             atk: 20,
-            atk_range: 3,
+            atk_range: 7,
             cover_people: 5,
+            atk_interval: 1,
+            speed: 1
         },
     }
 
