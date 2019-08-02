@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const technology = {
   war: {
     name: '战争',

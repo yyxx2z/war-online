@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const worker = {
   fruit_farmer: {
     name: '果农',

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const items = {
   war_horn: {
     name: '战争号角',

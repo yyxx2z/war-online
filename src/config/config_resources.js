@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const resources = {
     food: {
         name: '食物',

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const operating = {
     pick_food: {
         name: '采集食物',

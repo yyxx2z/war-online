@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const items = {
   war: {//战争规则
     atk_range: {//伤害浮动范围
