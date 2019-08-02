@@ -6,6 +6,7 @@ import operating from './config_operating';
 import creature from './config_creature';
 import worker from './config_worker';
 import items from './config_items';
+import technology from './config_technology';
 
 export const config = {
     'global': {},
@@ -15,4 +16,5 @@ export const config = {
     'building': building,//建筑
     'worker': worker,//工种
     'items': items,//商人兑换的商品
+    'technology': technology,//科技
 };
