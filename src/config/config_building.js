@@ -52,8 +52,10 @@ export const building = {
         description: '矿场，提供采矿的场所',
         upgrade: {
             1: {
-                resources: {
-                    wood: '15',
+                building: {
+                    resources: {
+                        wood: '15',
+                    }
                 },
                 miner: '2',
                 stock: {
@@ -61,8 +63,10 @@ export const building = {
                 }
             },
             x: {
-                resources: {
-                    wood: '15x',
+                building: {
+                    resources: {
+                        wood: '15x',
+                    }
                 },
                 miner: '2x',
                 stock: {
