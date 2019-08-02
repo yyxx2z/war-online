@@ -1,8 +1,13 @@
 //参数配置文件
+
 import building from './config_building';
+import resources from './config_resources';
+import operating from './config_operating';
 
 export const config = {
     'global': {},
+    'operating': operating,//操作
+    'resources': resources,
     'building': building,
     //***工种
     //
