@@ -5,7 +5,9 @@ export const building = {
         description: '主基地，提供一些物品容量和人口上限',
         upgrade: {
             1: {
-                building_resources: {},
+                building: {
+                    resources: {}
+                },
                 population: '100',
                 stock: {
                     all: '1000'
@@ -22,8 +24,10 @@ export const building = {
         description: '果园，提供少量食物',
         upgrade: {
             1: {
-                building_resources: {
-                    '': ''
+                building: {
+                    resources: {
+                        wood: '15',
+                    }
                 },
                 fruit_farmer: '2',
                 stock: {
@@ -31,6 +35,11 @@ export const building = {
                 }
             },
             x: {
+                building: {
+                    resources: {
+                        wood: '15x',
+                    }
+                },
                 fruit_farmer: '2x',
                 stock: {
                     food: "{1.2}"
@@ -43,12 +52,18 @@ export const building = {
         description: '矿场，提供采矿的场所',
         upgrade: {
             1: {
+                resources: {
+                    wood: '15',
+                },
                 miner: '2',
                 stock: {
                     mine: "100"
                 }
             },
             x: {
+                resources: {
+                    wood: '15x',
+                },
                 miner: '2x',
                 stock: {
                     mine: "{1.2}"
@@ -67,4 +82,4 @@ export const building = {
     //仓库
     //*防御建筑
     //城墙
-}
+};

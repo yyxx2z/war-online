@@ -5,8 +5,10 @@ export const creature = {
         rule: {
             waiting_time: 5 * 1000,
             waiting_after: {
-                young_child: '-1',
-                adult: '+1',
+                creature: {
+                    young_child: '-1',
+                    adult: '+1',
+                }
             }
         }
     },
@@ -14,4 +16,4 @@ export const creature = {
         name: '成年人',
         description: '为部落的崛起而努力'
     },
-}
+};
