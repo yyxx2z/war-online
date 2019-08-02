@@ -11,12 +11,12 @@ import rules from './config_technology';
 
 export const config = {
     'global': {},
-    'operating': operating,//操作
-    'creature': creature,//生物
-    'resources': resources,//资源
-    'building': building,//建筑
-    'worker': worker,//工种
-    'items': items,//商人兑换的商品
-    'technology': technology,//科技
     'rules': rules,//规则配置
+    'resources': resources,//资源
+    'creature': creature,//生物
+    'worker': worker,//工种
+    'building': building,//建筑
+    'technology': technology,//科技
+    'items': items,//物品
+    'operating': operating,//操作
 };
