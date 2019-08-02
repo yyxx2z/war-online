@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const creature = {
     young_child: {
         name: '幼儿',

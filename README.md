@@ -4,5 +4,5 @@ Not online game
 ### 启动
 ```
   cd war-online
-  npm run serve
+  npm run dev
 ```

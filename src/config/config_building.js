@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const building = {
     description: '建筑',
     main_base: {
@@ -18,7 +19,7 @@ export const building = {
                 stock: '{1.2x}'
             }
         },
-        expansion:{}
+        expansion: {}
     },
     orchard: {
         name: '果园',

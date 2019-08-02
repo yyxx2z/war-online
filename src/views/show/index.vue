@@ -2,10 +2,18 @@
   <div class="wrapper">
     <h3>数据统计面板</h3>
     <ul class="panel-col" v-if="showList && showList.length !== 0">
-      <li class="panel-row" v-for="(row, index) in showList" :key="index">
-        <div class="row-title">{{ row.name }}</div>
-        <div class="row-value">{{ row.value }} / <span class="row-value-limit">{{ row.upperLimit }}</span></div>
-        <div class="row-rate">({{ row.rate }}/秒)</div>
+      <li v-for="(row, index) in showList" :key="index">
+        <div class="panel-row" v-if="row.unLocked">
+          <div class="row-title">{{ row.zh }}</div>
+          <div class="row-value">
+            <span 
+              class="row-value-current"
+              :class="{ 'row-value-current__fulled': row.value >= row.upperLimit }"
+            >{{ row.value }}</span>
+             / 
+            <span class="row-value-limit">{{ row.upperLimit }}</span></div>
+          <div class="row-rate">({{ row.rate }}/秒)</div>
+        </div>
       </li>
     </ul>
   </div>
@@ -17,8 +25,11 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      showList: state => state.source.showData
+      showList: state => state.source.resource
     })
+  },
+
+  mounted() {
   },
 
   methods: {
@@ -54,10 +65,16 @@ export default {
         &-limit {
           color: #757575;
         }
+
+        &-current {
+          &__fulled {
+            color: #d32f2f;
+          }
+        }
       }
 
       .row-rate {
-        width: 40px;
+        min-width: 40px;
       }
     }
   }
