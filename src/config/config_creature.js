@@ -44,11 +44,6 @@ export const creature = {
                 food: '-2/s'
             }
         },
-        create_need: {
-            resources: {
-                food: '-30'
-            }
-        },
         attributes: {
             hp: 20,
             atk: 10,
@@ -63,11 +58,6 @@ export const creature = {
                 food: '-2/s'
             }
         },
-        create_need: {
-            resources: {
-                food: '-30'
-            }
-        },
         attributes: {
             hp: 10,
             atk: 5,
@@ -80,11 +70,6 @@ export const creature = {
         demand: {
             resources: {
                 food: '-10/s'
-            }
-        },
-        create_need: {
-            resources: {
-                food: '-150'
             }
         },
         attributes: {
