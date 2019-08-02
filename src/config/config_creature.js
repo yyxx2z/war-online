@@ -48,6 +48,7 @@ export const creature = {
             hp: 20,
             atk: 10,
             atk_range: 1,
+            cover_people: 1,
         },
     },
     archer: {
@@ -62,6 +63,7 @@ export const creature = {
             hp: 10,
             atk: 5,
             atk_range: 3,
+            cover_people: 1,
         },
     },
     catapult: {
