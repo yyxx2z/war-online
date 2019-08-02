@@ -1,4 +1,4 @@
-export const resources = {
+export const operating = {
     pick_food: {
         name: '采集食物',
         description: '手动获取食物',
