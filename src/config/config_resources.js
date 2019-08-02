@@ -11,4 +11,8 @@ export const resources = {
         name: '矿物',
         description: '矿物含量很高的岩石'
     },
+    gold: {
+        name: '黄金',
+        description: 'gold gold gold'
+    },
 };

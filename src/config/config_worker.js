@@ -22,7 +22,8 @@ export const worker = {
         description: '采集矿物',
         effect: {
             resources: {
-                mineral: "5/s"
+                mineral: "5/s",
+                gold: "0.005/s",
             }
         }
     },
