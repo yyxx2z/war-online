@@ -1,7 +1,7 @@
 export const operating = {
     pick_food: {
         name: '采集食物',
-        description: '手动获取食物',
+        description: '自己动手丰衣足食',
         consume: {},
         effect: {
             waiting_time: 0,
