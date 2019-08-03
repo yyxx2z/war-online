@@ -4,6 +4,7 @@ export const items = {
   rule: [
     '配置内x，指目标等级或目标数量',
     'effect内  有三部分，第一部分是增+或减-效果，第二部分是数字或表达式，第三部分是单位，(单位暂时只有:s)',
+    '单位，building内的effect内无',
     '第一部分，第二部分必有，第三部分可无，无则是一次性消耗',
     '第二部分，要么是数字，要么是表达式，不会都有，数字就是纯数字，表达式就会包含在{}内',
     'demand(需求)和consume(消耗)和effect(效果)对象内，会涉及到的数据有resources、technology、building、creature、iteams',
