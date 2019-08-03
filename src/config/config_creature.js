@@ -1,5 +1,6 @@
 /* eslint-disable */
 export const creature = {
+  description: '生物',
   young_child: {
     name: '幼儿',
     description: '我还是个孩子',
@@ -8,11 +9,7 @@ export const creature = {
         food: '-0.5/s'
       }
     },
-    attributes: {
-      hp: 0,
-      atk: 0,
-      atk_range: 0,
-    },
+    attributes: {},
     rule: {
       waiting_time: 5 * 1000,
       waiting_after: {
@@ -47,7 +44,7 @@ export const creature = {
     },
     attributes: {
       hp: 20,
-      atk: 10,
+      atk: 5,
       atk_range: 1,
       cover_people: 1,
       atk_interval: 0,
@@ -64,7 +61,7 @@ export const creature = {
     },
     attributes: {
       hp: 10,
-      atk: 5,
+      atk: 3,
       atk_range: 5,
       cover_people: 1,
       atk_interval: 0,

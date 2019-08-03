@@ -9,14 +9,38 @@ export const building = {
         building: {
           resources: {}
         },
-        population: '100',
-        stock: {
-          all: '1000'
+        unlocked: {
+          resources: {
+            population: true
+          },
+          stock: {
+            food: true,
+            wood: true
+          }
+        },
+        effect: {
+          resources: {
+            population: '+100', // 对应资源增加数值
+          },
+          stock: {
+            food: '+1000',
+            wood: '+500',
+          }
         }
       },
       x: {
-        population: '{1.2x}',
-        stock: '{1.2x}'
+        building: {
+          resources: {}
+        },
+        effect: {
+          resources: {
+            population: '+{100+50*x}',
+          },
+          stock: {
+            food: '+{1000+200*x}',
+            wood: '+{500+100*x}',
+          }
+        }
       }
     },
     expansion: {}
@@ -28,23 +52,38 @@ export const building = {
       1: {
         building: {
           resources: {
-            wood: '15',
+            wood: '-15',
           }
         },
-        fruit_farmer: '2',
-        stock: {
-          food: "100"
+        unlocked: {
+          worker: {
+            fruit_farmer: true
+          }
+        },
+        production_coefficient: 2,
+        effect: {
+          worker: {
+            fruit_farmer: '+2',
+          },
+          stock: {
+            food: '+400'
+          }
         }
       },
       x: {
         building: {
           resources: {
-            wood: '15x',
+            wood: '-{15+(7.5*x)}',
           }
         },
-        fruit_farmer: '2x',
-        stock: {
-          food: "{1.2}"
+        production_coefficient: '{2+0.1*x}',
+        effect: {
+          worker: {
+            fruit_farmer: '+{2*x}',
+          },
+          stock: {
+            food: '+{400+(200*x)}'
+          }
         }
       }
     },
@@ -52,7 +91,7 @@ export const building = {
       x: {
         building: {
           resources: {
-            wood: '30x',
+            wood: '-{30*x}',
           }
         }
       }
@@ -65,23 +104,38 @@ export const building = {
       1: {
         building: {
           resources: {
-            wood: '15',
+            wood: '-15',
           }
         },
-        miner: '2',
-        stock: {
-          mine: "100"
-        }
+        unlocked: {
+          worker: {
+            miner: true
+          }
+        },
+        production_coefficient: 1,
+        effect: {
+          worker: {
+            miner: '+2'
+          },
+          stock: {
+            mine: "+200"
+          }
+        },
       },
       x: {
         building: {
           resources: {
-            wood: '15x',
+            wood: '-{15+(7.5*x)}',
           }
         },
-        miner: '2x',
-        stock: {
-          mine: "{1.2}"
+        production_coefficient: '{1+0.0.5*x}',
+        effect: {
+          worker: {
+            miner: '+2x'
+          },
+          stock: {
+            mine: "+{200+(100*x)}"
+          }
         }
       }
     },
@@ -89,7 +143,61 @@ export const building = {
       x: {
         building: {
           resources: {
-            wood: '30x',
+            wood: '-30*x',
+          }
+        }
+      }
+    }
+  },
+  metal_factory: {
+    name: '金属工厂',
+    description: '可以将矿石冶炼成金属',
+    upgrade: {
+      1: {
+        building: {
+          resources: {
+            wood: '-300',
+            mineral: '-150',
+          }
+        },
+        production_coefficient: 1,
+        unlocked: {
+          worker: {
+            smelter: true
+          }
+        },
+        effect: {
+          worker: {
+            smelter: '+2',
+          },
+          stock: {
+            metal: '+500'
+          }
+        }
+      },
+      x: {
+        building: {
+          resources: {
+            wood: '-{300+(150*x)}',
+            mineral: '-{150+(75*x)}',
+          }
+        },
+        production_coefficient: '{1+0.1*x}',
+        effect: {
+          worker: {
+            smelter: '+{2*x}',
+          },
+          stock: {
+            metal: '+{500+(250*x)}'
+          }
+        }
+      }
+    },
+    expansion: {
+      x: {
+        building: {
+          resources: {
+            wood: '-{300*(0.5*x+0.5)}',
           }
         }
       }
@@ -102,35 +210,24 @@ export const building = {
       1: {
         building: {
           resources: {
-            wood: '15',
+            wood: '-15',
           }
         },
-        miner: '2',
-        stock: {
-          mine: "100"
+        unlocked: {
+          creature: {
+            warrior: true
+          }
         }
       },
       x: {
         building: {
           resources: {
-            wood: '15x',
+            wood: '-15x',
           }
-        },
-        miner: '2x',
-        stock: {
-          mine: "{1.2}"
         }
       }
     },
-    expansion: {
-      x: {
-        building: {
-          resources: {
-            wood: '30x',
-          }
-        }
-      }
-    }
+    expansion: false
   }
   //***建筑(工位，容量，效率)
   //主营地
@@ -143,4 +240,4 @@ export const building = {
   //仓库
   //*防御建筑
   //城墙
-};
+}
