@@ -29,17 +29,4 @@ export default {
   margin: 0;
   padding: 0;
 }
-
-.war-btn {
-  text-align: left;
-  display: flex;
-
-  &__normal {
-    width: 200px;
-  }
-
-  &-name {
-    color: #212121;
-  }
-}
 </style>

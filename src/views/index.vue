@@ -3,17 +3,21 @@
     <el-row :gutter="10">
       <el-col :span="6">
         <div class="grid-content bg-purple">
-          <ShowModel />
+          <div class="panel-wrapper">
+            <ShowModel />
+          </div>
         </div>
       </el-col>
       <el-col :span="12">
-        <div class="grid-content bg-purple-light">
+        <div class="panel-wrapper">
           <ControlModel />
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content bg-purple">
-          <LogModel />
+          <div class="panel-wrapper">
+            <LogModel />
+          </div>
         </div>
       </el-col>
     </el-row>
@@ -89,8 +93,18 @@ export default {
 </script>
 
 <style lang="scss">
+::-webkit-scrollbar {display:none}
+
 .main-wrapper {
   margin-top: 20px;
+
+  .panel-wrapper {
+    height: 26rem;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 }
 .bg-purple-dark {
   background: #99a9bf;

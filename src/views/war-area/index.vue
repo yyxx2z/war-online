@@ -55,11 +55,11 @@ export default {
       }, 1400)
     },
     reset() {
-      this.left = {
+      this.left = Object.assign(this.left, {
         position: 0,
         opacity: 1,
         attacked: false
-      }
+      })
     }
   }
 }
