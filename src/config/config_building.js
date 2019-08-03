@@ -7,7 +7,6 @@ export const building = {
     upgrade: {
       1: {
         building: {
-          resources: {}
         },
         unlocked: {
           resources: {
