@@ -1,5 +1,5 @@
 /* eslint-disable */
-export const items = {
+export const rules = {
   description: '规则属性',
   war: {//战争规则
     atk_range: {//伤害浮动范围
