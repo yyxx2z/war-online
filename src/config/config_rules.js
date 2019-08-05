@@ -16,10 +16,6 @@ export const rules = {
         '无敌人移动时，方位依次为：前、上、下、无(无即不移动)',
       ],
     },
-    atk_range: {//伤害浮动范围
-      min: 0.5,
-      max: 1.25,
-    },
     column_num: {//列方阵数
       min: 0,
       max: 10,
