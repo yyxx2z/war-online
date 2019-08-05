@@ -4,6 +4,11 @@ export const technology = {
   find_orchard: {
     name: '种植果园',
     description: '果树果树你快快生长',
+    consume: {
+      resources: {
+        food: '-10',
+      }
+    },
     unlocked: {
       building: {
         orchard: true
@@ -13,6 +18,11 @@ export const technology = {
   find_metal: {
     name: '发现金属',
     description: '这这这也太硬了吧',
+    consume: {
+      resources: {
+        food: '-100',
+      }
+    },
     unlocked: {
       building: {
         metal_factory: true

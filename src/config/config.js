@@ -8,8 +8,8 @@ import creature from './config_creature';
 import worker from './config_worker';
 import items from './config_items';
 import technology from './config_technology';
-import rules from './config_technology';
-import init from './config_technology';
+import rules from './config_rules';
+import init from './config_init';
 
 export const config = {
   'global': {},

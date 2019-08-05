@@ -6,8 +6,7 @@ export const building = {
     description: '主基地，提供一些物品容量和人口上限',
     upgrade: {
       1: {
-        building: {
-        },
+        building: {},
         unlocked: {
           resources: {
             population: true
@@ -19,7 +18,7 @@ export const building = {
         },
         effect: {
           resources: {
-            population: '+100', // 对应资源增加数值
+            population: '+5', // 对应资源增加数值
           },
           stock: {
             food: '+1000',
@@ -27,9 +26,18 @@ export const building = {
           }
         }
       },
+      2: {
+        building: {
+          resources: {
+            food: '-100',
+          }
+        }
+      },
       x: {
         building: {
-          resources: {}
+          resources: {
+            food: '-30x',
+          }
         },
         effect: {
           resources: {
@@ -213,6 +221,9 @@ export const building = {
           }
         },
         unlocked: {
+          operating: {
+            train_warrior: true
+          },
           creature: {
             warrior: true
           }
