@@ -23,7 +23,7 @@ export const rules = {
     '资源不能为负',
   ],
   unlocked: {
-    technology: {
+    the_birth_of_technology: {
       description: '科技的诞生',
       condition: {
         resources: {
