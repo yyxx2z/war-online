@@ -6,11 +6,11 @@
         <div class="panel-row" v-if="row.unLocked">
           <div class="row-title">{{ row.zh }}</div>
           <div class="row-value">
-            <span 
+            <span
               class="row-value-current"
               :class="{ 'row-value-current__fulled': row.value >= row.upperLimit }"
             >{{ row.value }}</span>
-             / 
+             /
             <span class="row-value-limit">{{ row.upperLimit }}</span></div>
           <div class="row-rate">({{ row.rate }}/秒)</div>
         </div>

@@ -43,9 +43,13 @@ export const creature = {
       }
     },
     attributes: {
-      hp: 20,
-      atk: 5,
-      atk_range: 1,
+      hp: 20,//血量
+      atk: 5,//伤害
+      atk_distance: 1,//攻击距离
+      atk_range: {//伤害浮动范围
+        min: 0.5,
+        max: 1.25,
+      },
       effect_range: 3,//被攻击限制人数，最多被3个单位攻击
       cover_people: 1,//攻击覆盖人数，最多攻击1个单位
       atk_interval: 0,//攻击间隔，间隔0回合
@@ -63,7 +67,11 @@ export const creature = {
     attributes: {
       hp: 10,
       atk: 3,
-      atk_range: 5,
+      atk_distance: 5,
+      atk_range: {
+        min: 0.5,
+        max: 1.25,
+      },
       effect_range: 3,
       cover_people: 1,
       atk_interval: 0,
@@ -81,17 +89,15 @@ export const creature = {
     attributes: {
       hp: 10,
       atk: 200,
-      atk_range: 10,
+      atk_distance: 10,
+      atk_range: {
+        min: 0.5,
+        max: 1.25,
+      },
       effect_range: 20,
       cover_people: 5,
       atk_interval: 1,
       speed: 1
     },
   }
-
-  //***兵种
-  //民兵
-  //步兵
-  //弓箭手
-  //投石器
 };
