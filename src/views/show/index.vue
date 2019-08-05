@@ -21,8 +21,11 @@
 
 <script>
 import { mapState } from 'vuex'
+import TemlateMixin from '../../mixin/template'
 
 export default {
+  mixins: [TemlateMixin],
+
   computed: {
     ...mapState({
       showList: state => state.source.resource

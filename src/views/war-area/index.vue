@@ -1,5 +1,21 @@
 <template>
   <section class="war-wrapper">
+    <div style="border:2px solid #212121;">
+      <div>直接使用</div>
+      soldier 1
+      <el-button @click="logTestInfo">Log info</el-button>
+      <el-button @click="soldierLevelUp">Level Up</el-button>
+      <div>姓名: {{ xiaoMing && xiaoMing.name }}</div>
+      <div>等级: {{ xiaoMing && xiaoMing.level }}</div>
+    </div>
+    <div style="border:2px solid #212121;">
+      <div>通过 store 控制数据</div>
+      soldier 2
+      <el-button @click="logTestInfo2">Log info2</el-button>
+      <el-button @click="soldier2 && soldier2.levelUp()">Level Up</el-button>
+      <div>姓名: {{ soldier2 && soldier2.name }}</div>
+      <div>等级: {{ soldier2 && soldier2.level }}</div>
+    </div>
     <div class="war-header">
       <div class="war-title">对战</div>
       <el-button type="primary" @click="move">move</el-button>
@@ -25,6 +41,10 @@
 </template>
 
 <script>
+// 取 store 文件夹里的 state 所需要的辅助函数
+import { mapState } from 'vuex'
+import { Warrior } from '../../lib/creature'
+
 export default {
   data() {
     return {
@@ -39,11 +59,43 @@ export default {
           [],
           [3, 5]
         ]
-      }
+      },
+      testInfo: '',
+      testInfo2: '',
+      xiaoMing: null
     }
   },
 
+  computed: {
+    // 取得 soldier 里 state 的数据
+    ...mapState({
+      soldier2: state => state.soldier.soldier2
+    })
+  },
+
   methods: {
+    logTestInfo() {
+      // 类调用范例
+      this.xiaoMing = new Warrior({
+        name: '小明',
+        level: 2
+      })
+      this.xiaoMing.getWarriorDetail()
+      this.testInfo = '姓名: ' + this.xiaoMing.name + ' 等级：' + this.xiaoMing.level
+    },
+    soldierLevelUp() {
+      this.xiaoMing.levelUp()
+    },
+    logTestInfo2() {
+      const xiaoHua = {
+        name: '小花',
+        level: 3
+      }
+      this.$store.dispatch('soldier/setNewSoldier', xiaoHua)
+      console.log('thid.soldier 2', this.soldier2)
+      this.soldier2.getWarriorDetail()
+      this.testInfo2 = '姓名: ' + this.soldier2.name + ' 等级：' + this.soldier2.level
+    },
     move() {
       this.left.position += 2 // 移动
     },
@@ -91,8 +143,6 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-
-    &-bg {}
 
     .army-item {
       position: absolute;
