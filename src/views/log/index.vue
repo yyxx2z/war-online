@@ -29,16 +29,13 @@
         this.show_log(text);
       },
       send_event_log(event_value) {
-        switch (event_value) {
-          case '':
-            ;
-          default :
-            return false;
+        if (config_event[event_value]) {
+          return false;
         }
-        return false;
+        return this.event_handle(config_event[event_value]);
       },
-      event_food_harvest() {
-
+      event_handle(e_config) {
+        //
       }
     }
   }
