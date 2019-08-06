@@ -238,6 +238,55 @@ export const building = {
       }
     },
     expansion: false
+  },
+  metal_tool_factory: {
+    name: '金属锻造处',
+    description: '可以将金属转化为各种实用工具',
+    upgrade: {
+      1: {
+        building: {
+          resources: {
+            wood: '-300',
+            mineral: '-150',
+          }
+        },
+        production_coefficient: 1,
+        unlocked: {
+          items: {
+            metal_ax: true,
+            metal_pick: true,
+            metal_smelter_tool: true,
+            metal_sword: true,
+          }
+        },
+        effect: {
+          worker: {
+            smelter: '+2',
+          },
+          stock: {
+            metal: '+500'
+          }
+        }
+      },
+      x: {
+        building: {
+          resources: {
+            wood: '-{300+(150*x)}',
+            mineral: '-{150+(75*x)}',
+          }
+        },
+        production_coefficient: '{1+0.1*x}',
+        effect: {
+          worker: {
+            smelter: '+{2*x}',
+          },
+          stock: {
+            metal: '+{500+(250*x)}'
+          }
+        }
+      }
+    },
+    expansion: false
   }
   //***建筑(工位，容量，效率)
   //主营地
