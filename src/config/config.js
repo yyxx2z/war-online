@@ -9,6 +9,7 @@ import {worker} from './config_worker';
 import {items} from './config_items';
 import {technology} from './config_technology';
 import {rules} from './config_rules';
+import {event} from './config_event';
 import {init} from './config_init';
 
 export const config = {
@@ -21,5 +22,6 @@ export const config = {
   'technology': technology, // 科技
   'items': items, // 物品
   'operating': operating, // 操作
+  'event': event, // 事件
   'init': init//初始化
 }
