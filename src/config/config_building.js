@@ -67,7 +67,7 @@ export const building = {
             fruit_farmer: true
           }
         },
-        production_coefficient: 2,
+        production_coefficient: 1,//生产系数
         effect: {
           worker: {
             fruit_farmer: '+2',

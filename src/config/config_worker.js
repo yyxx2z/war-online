@@ -13,6 +13,7 @@ export const worker = {
   lumberjack: {
     name: '伐木工',
     description: '采集木材',
+    production_coefficient: 1,//生产系数
     effect: {
       resources: {
         wood: "+5/s"
