@@ -1,6 +1,6 @@
 /* eslint-disable */
 export const event = {
-  good_harvest: {
+  food_harvest: {
     year_max_trigger: 1,//每年最大触发次数
     influence: {
       resources: {
