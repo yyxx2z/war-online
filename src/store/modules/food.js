@@ -25,7 +25,7 @@ export default {
       // 增加数量
       commit('TOGGLE_FOODS_COUNT', countNum)
       console.log('state.foodsNum', state.foodsNum)
-      dispatch('source/setResource', {
+      dispatch('resources/setResource', {
         id: 'foods',
         key: 'value',
         value: state.foodsNum

@@ -4,10 +4,10 @@ export const operating = {
   pick_food: {
     name: '采集食物',
     description: '自己动手丰衣足食',
-    consume: {},//消耗
+    consume: {}, // 消耗
     effect: {
-      waiting_time: 0,//操作等待时间 单位：毫秒
-      waiting_after: {//等待后执行的操作
+      waiting_time: 0, // 操作等待时间 单位：毫秒
+      waiting_after: { // 等待后执行的操作
         resources: {
           food: '+1'
         }
