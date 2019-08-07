@@ -7,9 +7,13 @@ export const init = {
     operating: {
       pick_food: true
     },
+    building: {
+      orchard: true,
+      main_base: true
+    },
     stock: {
-      resources : {
-        food: 0
+      resources: {
+        food: 100
       }
     }
   }

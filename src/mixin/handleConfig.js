@@ -8,22 +8,22 @@ export default {
 
   methods: {
     unLockedEvent(key, value) {
-      // switch (key) {
-      //   case 'stock':
-      //     // 解锁库存
-      //     break
-      //   case 'operating':
-      //     // 解锁操作
-      //     var unlockedItems = Object.entries(value).filter(item => typeof item[1] === 'boolean' && item[1]).map(item => item[0])
-      //     console.log('unLockedEvent :: unlockedItems: ', unlockedItems)
-      //     this.handleOperating(unlockedItems)
-      //     break
-      //   case 'resources':
-      //     // 解锁资源
-      //     break
-      //   default:
-      //     break
-      // }
+      switch (key) {
+        case 'stock':
+          // 解锁库存
+          break
+        case 'operating':
+          // 解锁操作
+          var unlockedItems = Object.entries(value).filter(item => typeof item[1] === 'boolean' && item[1]).map(item => item[0])
+          console.log('unLockedEvent :: unlockedItems: ', unlockedItems)
+          this.handleOperating(unlockedItems)
+          break
+        case 'resources':
+          // 解锁资源
+          break
+        default:
+          break
+      }
     },
     dispatchEvent() {},
     handleBuilding() {},

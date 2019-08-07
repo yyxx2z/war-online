@@ -3,8 +3,7 @@
     <el-button 
         v-if="btn"
         :type="btn.type" 
-        class="war-btn war-btn__normal" 
-        @click="btn.clickEvent"
+        class="war-btn war-btn__normal"
       >
         <span class="war-btn-name">{{ btn.name }}</span>
         <span class="war-btn-count" v-if="btn.count > 1">({{ btn.count }})</span>
