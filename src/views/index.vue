@@ -32,10 +32,16 @@ import ShowModel from './show/index'
 import LogModel from './log/index'
 import ControlModel from './control/index'
 import WarArea from './war-area/index'
+
+import HandleConfigMixin from '../mixin/handleConfig'
+
 import { mapState } from 'vuex'
+
 let sourceCountInterval
 
 export default {
+  mixins: [HandleConfigMixin],
+
   computed: {
     ...mapState({
       resource: state => state.source.resource
@@ -62,10 +68,29 @@ export default {
      *  1-2. 读取存档
      * 2. 运行资源变化函数
      */
-    this.startInterval()
+    try {
+      const userData = this.$utils.getStorage('user')
+      if (userData) {
+        // loading userData
+      } else {
+        this.initGameData()
+      }
+      // this.startInterval()
+    } catch (error) {
+      console.log(error)
+    }
   },
 
   methods: {
+    initGameData() {
+      console.log('init game')
+      const initConfig = this.$gameConfig.init
+      const unLockedItems = initConfig.unlocked
+      Object.keys(unLockedItems).forEach(key => {
+        console.log('key ', key)
+        this.unLockedEvent(key, unLockedItems[key])
+      })
+    },
     startInterval() {
       sourceCountInterval = setInterval(() => {
         this.totalSourceComputed()

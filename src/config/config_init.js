@@ -1,13 +1,13 @@
 /* eslint-disable */
 export const init = {
   unlocked: {
-    stock: {
+    resources: {
       food: true
     },
     operating: {
       pick_food: true
     },
-    resources: {
+    stock: {
       food: 0
     }
   }

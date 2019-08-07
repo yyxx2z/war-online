@@ -21,6 +21,11 @@
       @click="toggleDialog('building', true)"
     >建造</el-button>
     <div class="btn-list">
+      <!-- <ButtonItem 
+        v-for="(btn, btnIndex) in operations"
+        :key="btnIndex"
+        :btn="btn"
+      /> -->
       <ButtonItem 
         v-for="(btn, btnIndex) in campListAvilid"
         :key="btnIndex"
@@ -38,6 +43,7 @@
 
 <script>
 import ButtonItem from './Button/ButtonItem'
+import { mapState } from 'vuex'
 
 export default {
   data() {
@@ -46,6 +52,7 @@ export default {
       sortTabValue: '0',
       sortTab: [
         { label: '全部', value: 'all' },
+        { label: '操作', value: 'operation' },
         { label: '食物', value: 'food' },
         { label: '矿石', value: 'stone' },
         { label: '人口', value: 'population' },
@@ -59,7 +66,7 @@ export default {
           count: 2,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
@@ -70,7 +77,7 @@ export default {
           count: 4,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
@@ -81,7 +88,7 @@ export default {
           count: 2,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
@@ -92,7 +99,7 @@ export default {
           count: 2,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
@@ -103,7 +110,7 @@ export default {
           count: 2,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
@@ -114,7 +121,7 @@ export default {
           count: 2,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
@@ -125,13 +132,19 @@ export default {
           count: 2,
           type: '', // 默认按钮样式
           clickEvent: () => {
-            this.$store.dispatch('source/addResourceValueByClick', {
+            this.$store.dispatch('resources/addResourceValueByClick', {
               name: 'foods'
             })
           }
         }
       ]
     }
+  },
+
+  computed: {
+    ...mapState({
+      operations: state => state.operating.operations
+    })
   },
 
   components: {
@@ -145,7 +158,9 @@ export default {
   },
 
   mounted() {
+    this.campList.unshift(...this.operations)
     this.toggleSortTab(this.sortTabValue)
+    console.log('this.campList', this.campList)
   },
 
   methods: {
@@ -183,5 +198,11 @@ export default {
 .card-header {
   text-align: left;
   font-weight: 600;
+}
+
+.operations {
+  border: 1px solid #c0c0c0;
+  margin: 40px 0 10px;
+  text-align: left;
 }
 </style>

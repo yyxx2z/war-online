@@ -38,7 +38,7 @@ export default {
   }
 
   &-delete {
-    
+    color: #ec2a2a;
   }
 }
 </style>

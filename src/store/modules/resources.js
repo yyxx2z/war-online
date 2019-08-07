@@ -1,40 +1,7 @@
 export default {
   namespaced: true,
   state: {
-    resource: [
-      {
-        name: 'foods',
-        zh: '食物',
-        value: 1000,
-        upperLimit: 2000,
-        rate: 2, // 每秒增长速率
-        unLocked: true
-      },
-      {
-        name: 'stone',
-        zh: '石材',
-        value: 12,
-        upperLimit: 200,
-        rate: 1.2,
-        unLocked: true
-      },
-      {
-        name: 'iron',
-        zh: '金属',
-        value: 6,
-        upperLimit: 20,
-        rate: 10.5,
-        unLocked: true
-      },
-      {
-        name: 'gold',
-        zh: '黄金',
-        value: 6,
-        upperLimit: 20,
-        rate: 10.5,
-        unLocked: false
-      }
-    ]
+    resource: []
   },
   mutations: {
     ADD_RESOURCE: (state, payload) => {
