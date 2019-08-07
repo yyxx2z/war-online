@@ -68,11 +68,8 @@ export default {
     // 解锁事项
     unlock({ state, commit }, unlocked) {
       Object.keys(unlocked).forEach(category => {
-        console.log('category: ', category)
         Object.keys(unlocked[category]).forEach(key => {
           if (category === 'stock') {
-            console.log('state', state, category, key)
-            console.log('state[category]', state[category])
             Object.keys(unlocked[category][key]).forEach(valueKey => {
               const itemIndex = state[key].findIndex(item => item.key === valueKey)
               commit('UPDATE_USER_DATA', {
@@ -87,7 +84,6 @@ export default {
           if (unlocked[category][key]) {
             // 解锁
             const res = game.unlocked(key, category)
-            // console.log('解锁 获取初始值', res)
             commit('UNLOCK_USER_DATA', {
               categoryKey: category,
               itemKey: key,
@@ -104,6 +100,47 @@ export default {
           }
         })
       })
-    }
+    },
+    cosume({ state, commit }, data) {
+      const resultArr = [] // 检测结果数组
+      // 检测是否可扣除
+      Object.keys(data).forEach(category => {
+        Object.keys(data[category]).forEach(key => {
+          const expression = data[category][key]
+          const itemIndex = state[category].findIndex(item => item.key === key)
+          const res = game.cosume(state[category][itemIndex]['value'], expression)
+          resultArr.push(Object.assign({}, res, {
+            categoryKey: category,
+            itemKey: itemIndex,
+            key: key,
+            name: state[category][itemIndex]['name'],
+            valueKey: 'value'
+          }))
+        })
+      })
+      const unvalidArr = resultArr.filter(item => !item.result)
+      if (unvalidArr.length !== 0) {
+        // 资源不足
+        console.log('资源不足')
+        const errString = unvalidArr.map(item => item.name).join(',')
+        this.$message({
+          type: 'warning',
+          message: `${errString}资源不足`
+        })
+        return false
+      }
+      // 资源充足
+      // Update 计算后的资源
+      resultArr.forEach(item => {
+        commit('UPDATE_USER_DATA', {
+          categoryKey: item.categoryKey,
+          itemKey: item.itemKey,
+          valueKey: 'value',
+          value: item.newValue
+        })
+      })
+      return true
+    },
+    effect({ commit }, data) {}
   }
 }

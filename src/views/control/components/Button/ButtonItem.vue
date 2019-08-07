@@ -1,14 +1,30 @@
 <template>
   <div class="base-wrapper">
-    <el-button 
-        v-if="btn"
-        :type="btn.type" 
-        class="war-btn war-btn__normal"
-      >
-        <span class="war-btn-name">{{ btn.name }}</span>
-        <span class="war-btn-count" v-if="btn.count > 1">({{ btn.count }})</span>
-        <span class="war-btn-delete">出售</span>
-      </el-button>
+    <el-popover
+      placement="right"
+      width="400"
+      trigger="hover">
+        <div class="content">
+          <h4 style="margin-bottom: 10px;font-size: 16px;">{{ btn.name }}</h4>
+          <div>
+            {{ btn.description || '' }}
+          </div>
+          <div v-if="btn && btn.category === 'building'" class="popover-building-interaction">
+            <el-button type="success" size="mini" style="margin-right:6px;">升级</el-button>
+            <el-button type="danger" size="mini">销毁</el-button>
+          </div>
+        </div>
+        <el-button 
+          v-if="btn"
+          :type="btn.type" 
+          slot="reference"
+          class="war-btn war-btn__normal"
+          @click="clickButton"
+        >
+          <span class="war-btn-name">{{ btn.name }}</span>
+          <span class="war-btn-count" v-if="btn.level > 1">({{ btn.level }})</span>
+        </el-button>
+    </el-popover>
   </div>
 </template>
 
@@ -18,6 +34,12 @@ export default {
     btn: {
       type: Object,
       default: null
+    }
+  },
+
+  methods: {
+    clickButton() {
+      this.$emit('clickButton', this.btn)
     }
   }
 }
@@ -35,9 +57,11 @@ export default {
   &-name {
     color: #212121;
   }
+}
 
-  &-delete {
-    color: #ec2a2a;
-  }
+.popover-building-interaction {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>

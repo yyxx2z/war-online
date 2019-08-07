@@ -21,16 +21,16 @@
       @click="toggleDialog('building', true)"
     >建造</el-button>
     <div class="btn-list">
-      <!-- <ButtonItem 
-        v-for="(btn, btnIndex) in operations"
+      <div
+        v-for="(btn, btnIndex) in campList"
         :key="btnIndex"
-        :btn="btn"
-      /> -->
-      <ButtonItem 
-        v-for="(btn, btnIndex) in campListAvilid"
-        :key="btnIndex"
-        :btn="btn"
-      />
+      >
+        <ButtonItem 
+          v-if="sortTab[+sortTabValue].value === 'all' || btn.sort === sortTab[+sortTabValue].value"
+          :btn="btn"
+          @clickButton="clickButtonItem(btn)"
+        />
+      </div>
     </div>
 
     <el-dialog
@@ -50,66 +50,27 @@ export default {
     return {
       buildingDialogVisible: false,
       sortTabValue: '0',
-      sortTab: [
+      sortTab:  [
         { label: '全部', value: 'all' },
         { label: '操作', value: 'operation' },
         { label: '食物', value: 'food' },
-        { label: '矿石', value: 'stone' },
+        { label: '矿石', value: 'mineral' },
+        { label: '金属', value: 'metal' },
         { label: '人口', value: 'population' },
         { label: '其他', value: 'others' }
       ],
-      campListAvilid: [],
-      campList: [
-        {
-          name: '果园',
-          sort: 'food',
-          count: 2,
-          type: ''
-        },
-        {
-          name: '小屋',
-          sort: 'population',
-          count: 4,
-          type: ''
-        },
-        {
-          name: '矿场',
-          sort: 'stone',
-          count: 2,
-          type: ''
-        },
-        {
-          name: '牧场',
-          sort: 'food',
-          count: 2,
-          type: ''
-        },
-        {
-          name: '农田',
-          sort: 'food',
-          count: 2,
-          type: ''
-        },
-        {
-          name: '学院',
-          sort: 'others',
-          count: 2,
-          type: ''
-        },
-        {
-          name: '仓库',
-          sort: 'others',
-          count: 2,
-          type: ''
-        }
-      ]
+      campListAvilid: []
     }
   },
 
   computed: {
     ...mapState({
-      operations: state => state.operating.operations
-    })
+      operations: state => state.user.operating,
+      building: state => state.user.building
+    }),
+    campList() {
+      return [...this.operations, ...this.building]
+    }
   },
 
   components: {
@@ -123,12 +84,28 @@ export default {
   },
 
   mounted() {
-    this.campList.unshift(...this.operations)
     this.toggleSortTab(this.sortTabValue)
-    console.log('this.campList', this.campList)
   },
 
   methods: {
+    clickButtonItem(item) {
+      switch (item.category) {
+        case 'building':
+          this.clickBuildingButton(item)
+          break
+        case 'operating':
+          this.clickOperatingButton(item)
+          break
+        default:
+          break
+      }
+    },
+    clickBuildingButton(building) {
+      console.log('building', building)
+    },
+    clickOperatingButton(operating) {
+      console.log('operating', operating)
+    },
     toggleSortTab(tabIndex) {
       const type = this.sortTab[+tabIndex]['value']
       if (type === 'all') {

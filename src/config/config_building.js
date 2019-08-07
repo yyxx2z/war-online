@@ -3,6 +3,7 @@ export const building = {
   description: '建筑',
   main_base: {
     name: '主基地',
+    sort: 'others', // 分类按照 src/views/components/Camp.vue 去填写
     description: '主基地，提供一些物品容量和人口上限',
     upgrade: {
       1: {
@@ -60,6 +61,7 @@ export const building = {
   },
   orchard: {
     name: '果园',
+    sort: 'food',
     description: '果园，提供少量食物',
     upgrade: {
       1: {
@@ -116,6 +118,7 @@ export const building = {
   },
   mine: {
     name: '矿场',
+    sort: 'mineral',
     description: '矿场，提供采矿的场所',
     upgrade: {
       1: {
@@ -172,6 +175,7 @@ export const building = {
   },
   metal_factory: {
     name: '金属工厂',
+    sort: 'metal',
     description: '可以将矿石冶炼成金属',
     upgrade: {
       1: {
@@ -230,6 +234,7 @@ export const building = {
   },
   barracks: {
     name: '兵营',
+    sort: 'soldier',
     description: '部落训练战士攻防敌人的场所',
     upgrade: {
       1: {
@@ -259,6 +264,7 @@ export const building = {
   },
   metal_tool_factory: {
     name: '金属锻造处',
+    sort: 'metal',
     description: '可以将金属转化为各种实用工具',
     upgrade: {
       1: {

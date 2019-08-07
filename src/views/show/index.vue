@@ -3,15 +3,15 @@
     <h3>数据统计面板</h3>
     <ul class="panel-col" v-if="showList && showList.length !== 0">
       <li v-for="(row, index) in showList" :key="index">
-        <div class="panel-row" v-if="row.unLocked">
-          <div class="row-title">{{ row.zh }}</div>
+        <div class="panel-row" v-if="row.unlocked">
+          <div class="row-title">{{ row.name }}</div>
           <div class="row-value">
             <span
               class="row-value-current"
-              :class="{ 'row-value-current__fulled': row.value >= row.upperLimit }"
-            >{{ row.value }}</span>
+              :class="{ 'row-value-current__fulled': row.val >= row.stock }"
+            >{{ row.val }}</span>
              /
-            <span class="row-value-limit">{{ row.upperLimit }}</span></div>
+            <span class="row-value-limit">{{ row.stock }}</span></div>
           <div class="row-rate">({{ row.rate }}/秒)</div>
         </div>
       </li>

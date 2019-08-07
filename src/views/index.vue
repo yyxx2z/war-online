@@ -43,7 +43,7 @@ export default {
   mixins: [HandleConfigMixin],
 
   computed: {
-    ...mapState({
+    ...mapState({ 
       resources: state => state.user.resources,
       building: state => state.user.building
     }),
@@ -84,12 +84,9 @@ export default {
 
   methods: {
     initGameData() {
-      console.log('init game')
       const initConfig = this.$gameConfig.init
       const unLockedItems = initConfig.unlocked
       this.$store.dispatch('user/unlock', unLockedItems)
-      console.log('this.resources', this.resources)
-      console.log('this.building', this.building)
     },
     startInterval() {
       sourceCountInterval = setInterval(() => {

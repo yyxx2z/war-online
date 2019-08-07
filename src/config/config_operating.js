@@ -37,13 +37,15 @@ export const operating = {
     consume: {
       resources: {
         food: '-30',
+      },
+      creature: {
+        adult: '-1'
       }
     },
     effect: {
       waiting_time: 10 * 1000,
       waiting_after: {
         creature: {
-          adult: '-1',
           warrior: '+1',
         }
       }
@@ -55,13 +57,15 @@ export const operating = {
     consume: {
       resources: {
         food: '-30',
+      },
+      creature: {
+        adult: '-1'
       }
     },
     effect: {
       waiting_time: 10 * 1000,
       waiting_after: {
         creature: {
-          adult: '-1',
           archer: '+1',
         }
       }
@@ -73,13 +77,15 @@ export const operating = {
     consume: {
       resources: {
         food: '-150',
+      },
+      creature: {
+        adult: '-5'
       }
     },
     effect: {
       waiting_time: 10 * 1000,
       waiting_after: {
         creature: {
-          adult: '-5',
           catapult: '+1',
         }
       }
