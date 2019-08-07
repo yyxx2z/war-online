@@ -12,8 +12,10 @@ export const building = {
             population: true
           },
           stock: {
-            food: true,
-            wood: true
+            resources: {
+              food: true,
+              wood: true
+            }
           }
         },
         effect: {
@@ -21,8 +23,10 @@ export const building = {
             population: '+5', // 对应资源增加数值
           },
           stock: {
-            food: '+1000',
-            wood: '+500',
+            resources: {
+              food: '+1000',
+              wood: '+500',
+            }
           }
         }
       },
@@ -44,8 +48,10 @@ export const building = {
             population: '+{100+50*x}',
           },
           stock: {
-            food: '+{1000+200*x}',
-            wood: '+{500+100*x}',
+            resources: {
+              food: '+{1000+200*x}',
+              wood: '+{500+100*x}',
+            }
           }
         }
       }
@@ -73,7 +79,9 @@ export const building = {
             fruit_farmer: '+2',
           },
           stock: {
-            food: '+400'
+            resources: {
+              food: '+400'
+            }
           }
         }
       },
@@ -89,7 +97,9 @@ export const building = {
             fruit_farmer: '+{2*x}',
           },
           stock: {
-            food: '+{400+(200*x)}'
+            resources: {
+              food: '+{400+(200*x)}'
+            }
           }
         }
       }
@@ -125,7 +135,9 @@ export const building = {
             miner: '+2'
           },
           stock: {
-            mine: "+200"
+            resources: {
+              mine: "+200"
+            }
           }
         },
       },
@@ -141,7 +153,9 @@ export const building = {
             miner: '+2x'
           },
           stock: {
-            mine: "+{200+(100*x)}"
+            resources: {
+              mine: "+{200+(100*x)}"
+            }
           }
         }
       }
@@ -178,7 +192,9 @@ export const building = {
             smelter: '+2',
           },
           stock: {
-            metal: '+500'
+            resources: {
+              metal: '+500'
+            }
           }
         }
       },
@@ -195,7 +211,9 @@ export const building = {
             smelter: '+{2*x}',
           },
           stock: {
-            metal: '+{500+(250*x)}'
+            resources: {
+              metal: '+{500+(250*x)}'
+            }
           }
         }
       }
@@ -264,7 +282,9 @@ export const building = {
             smelter: '+2',
           },
           stock: {
-            metal: '+500'
+            resources: {
+              metal: '+500'
+            }
           }
         }
       },
@@ -281,7 +301,9 @@ export const building = {
             smelter: '+{2*x}',
           },
           stock: {
-            metal: '+{500+(250*x)}'
+            resources: {
+              metal: '+{500+(250*x)}'
+            }
           }
         }
       }

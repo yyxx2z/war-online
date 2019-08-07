@@ -8,7 +8,9 @@ export const init = {
       pick_food: true
     },
     stock: {
-      food: 0
+      resources : {
+        food: 0
+      }
     }
   }
 };

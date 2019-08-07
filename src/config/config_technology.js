@@ -28,7 +28,9 @@ export const technology = {
         metal_factory: true
       },
       stock: {
-        metal: true
+        resources: {
+          metal: true
+        }
       }
     }
   },
