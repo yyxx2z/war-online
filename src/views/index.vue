@@ -44,7 +44,8 @@ export default {
 
   computed: {
     ...mapState({
-      resource: state => state.source.resource
+      resources: state => state.user.resources,
+      building: state => state.user.building
     }),
     lockedResource() {
       if (!this.resource || this.resource.length === 0) {
@@ -86,10 +87,9 @@ export default {
       console.log('init game')
       const initConfig = this.$gameConfig.init
       const unLockedItems = initConfig.unlocked
-      Object.keys(unLockedItems).forEach(key => {
-        console.log('key ', key)
-        this.unLockedEvent(key, unLockedItems[key])
-      })
+      this.$store.dispatch('user/unlock', unLockedItems)
+      console.log('this.resources', this.resources)
+      console.log('this.building', this.building)
     },
     startInterval() {
       sourceCountInterval = setInterval(() => {

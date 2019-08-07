@@ -28,7 +28,7 @@ export default {
 
   computed: {
     ...mapState({
-      showList: state => state.source.resource
+      showList: state => state.user.resources
     })
   },
 

@@ -64,78 +64,43 @@ export default {
           name: '果园',
           sort: 'food',
           count: 2,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         },
         {
           name: '小屋',
           sort: 'population',
           count: 4,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         },
         {
           name: '矿场',
           sort: 'stone',
           count: 2,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         },
         {
           name: '牧场',
           sort: 'food',
           count: 2,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         },
         {
           name: '农田',
           sort: 'food',
           count: 2,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         },
         {
           name: '学院',
           sort: 'others',
           count: 2,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         },
         {
           name: '仓库',
           sort: 'others',
           count: 2,
-          type: '', // 默认按钮样式
-          clickEvent: () => {
-            this.$store.dispatch('resources/addResourceValueByClick', {
-              name: 'foods'
-            })
-          }
+          type: ''
         }
       ]
     }
