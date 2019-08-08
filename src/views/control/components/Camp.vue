@@ -105,6 +105,11 @@ export default {
     },
     clickOperatingButton(operating) {
       console.log('operating', operating)
+      const result = this.$store.dispatch('user/consume', operating.consume)
+      if (result) {
+        this.$store.dispatch('user/effect', operating.effect)
+      }
+      console.log('operating end')
     },
     toggleSortTab(tabIndex) {
       const type = this.sortTab[+tabIndex]['value']

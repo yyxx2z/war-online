@@ -64,8 +64,8 @@ export function unlocked(key, category) {
 
 // upgrade
 
-// cosume
-export function cosume(oldVal, expression) {
+// consume
+export function consume(oldVal, expression) {
   console.log('oldVal: ', oldVal, 'expression: ', expression)
   const afterCalc = {
     result: false,
@@ -86,6 +86,20 @@ export function cosume(oldVal, expression) {
 // expansion
 
 // effect
+// effect :: oldVal -> expression -> newVal
+export function effect(oldVal, expression, level = 1) {
+  let newValue = 0
+  if (/^[0-9]+.?[0-9]*/.test(oldVal)) {
+    expressionReg.forEach((item, index) => {
+      const canCalc = item.regex.test(expression)
+      if (canCalc) {
+        console.log('regex item', item)
+        newValue = +item.calc(oldVal, expression, level)
+      }
+    })
+  }
+  return newValue
+}
 
 // demand
 
@@ -93,5 +107,6 @@ export function cosume(oldVal, expression) {
 
 export default {
   unlocked,
-  cosume
+  consume,
+  effect
 }

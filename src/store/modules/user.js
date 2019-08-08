@@ -101,14 +101,15 @@ export default {
         })
       })
     },
-    cosume({ state, commit }, data) {
+    consume({ state, commit }, data) {
+      console.log('consume data', data)
       const resultArr = [] // 检测结果数组
       // 检测是否可扣除
       Object.keys(data).forEach(category => {
         Object.keys(data[category]).forEach(key => {
           const expression = data[category][key]
           const itemIndex = state[category].findIndex(item => item.key === key)
-          const res = game.cosume(state[category][itemIndex]['value'], expression)
+          const res = game.consume(state[category][itemIndex]['value'], expression)
           resultArr.push(Object.assign({}, res, {
             categoryKey: category,
             itemKey: itemIndex,
@@ -141,6 +142,26 @@ export default {
       })
       return true
     },
-    effect({ commit }, data) {}
+    effect({ state, commit }, { waiting_after }) {
+      console.log('effect action', waiting_after)
+      const data = waiting_after
+      Object.keys(data).forEach(category => {
+        Object.keys(data[category]).forEach(itemKey => {
+          const expression = data[category][itemKey]
+          const itemIndex = state[category].findIndex(item => item.key === itemKey)
+          const newValue = game.effect(state[category][itemIndex]['value'], expression, state[category][itemIndex]['level'])
+          console.log('newValue in effect', newValue, 'key:', itemKey)
+          console.log(state[category][itemIndex])
+          if (newValue) {
+            commit('UPDATE_USER_DATA', {
+              categoryKey: category,
+              itemKey: itemIndex,
+              valueKey: 'value',
+              value: newValue
+            })
+          }
+        })
+      })
+    }
   }
 }

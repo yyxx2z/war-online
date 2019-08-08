@@ -8,8 +8,8 @@
           <div class="row-value">
             <span
               class="row-value-current"
-              :class="{ 'row-value-current__fulled': row.val >= row.stock }"
-            >{{ row.val }}</span>
+              :class="{ 'row-value-current__fulled': row.value >= row.stock }"
+            >{{ row.value }}</span>
              /
             <span class="row-value-limit">{{ row.stock }}</span></div>
           <div class="row-rate">({{ row.rate }}/秒)</div>
