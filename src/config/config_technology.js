@@ -42,5 +42,43 @@ export const technology = {
         barracks: true
       }
     }
-  }
+  },
+  find_metal_tool: {
+    name: '锻造工具',
+    description: '让资源的开采更有效',
+    consume: {
+      resources: {
+        wood: '-100',
+        metal: '-500'
+      }
+    },
+    unlocked: {
+      building: {
+        metal_tool_factory: true
+      },
+      technology: {
+        find_metal_sword: true
+      }
+    }
+  },
+  find_metal_sword: {
+    name: '锻造剑',
+    description: '让战士的伤害更高',
+    consume: {
+      items: {
+        wood: '-100',
+        metal: '-300'
+      }
+    },
+    unlocked: {
+      items: {
+        metal_sword: true
+      }
+    }
+  },
+  //解锁弓兵
+  //解锁投石车
+  //提升食物产量
+  //提升矿物产量
+  //提升金属产量
 };

@@ -280,7 +280,7 @@ export const building = {
             metal_ax: true,
             metal_pick: true,
             metal_smelter_tool: true,
-            metal_sword: true,
+            metal_sword: false,
           }
         },
         effect: {
